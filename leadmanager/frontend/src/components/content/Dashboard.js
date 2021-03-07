@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Form from "./Form";
 import Leads from "./Leads";
-import { connect } from "react-redux";
-import { loadUser } from "../../actions/auth";
 
-const Dashboard = ({ loadUser }) => {
-  useEffect(() => {
-    loadUser();
-  }, []);
-
+const Dashboard = () => {
   return (
     <div className="container">
       <Form />
@@ -17,6 +11,4 @@ const Dashboard = ({ loadUser }) => {
   );
 };
 
-export default connect(null, { loadUser })(
-  Dashboard
-);
+export default Dashboard;

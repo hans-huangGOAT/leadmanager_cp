@@ -23,7 +23,9 @@ const Header = ({ auth, logout }) => {
     <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
       <span className="nav-item">
         <strong>
-          {`Welcome ${auth.user.username}`}
+          {auth.user
+            ? `Welcome ${auth.user.username}`
+            : ""}
         </strong>
       </span>
       <li className="nav-item">

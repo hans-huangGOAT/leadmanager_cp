@@ -16,6 +16,9 @@ import {
   Redirect,
 } from "react-router-dom";
 
+// action import
+import { loadUser } from "../actions/auth";
+
 // components import
 import Header from "./layout/Header";
 import Alerts from "./layout/Alerts";
@@ -34,7 +37,9 @@ const App = () => {
     timeout: 3000,
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
 
   return (
     <Provider store={store}>
